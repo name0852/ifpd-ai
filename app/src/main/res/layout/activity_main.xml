@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#1A1A2E"
+    android:padding="24dp">
+
+    <!-- ══ 왼쪽 패널: 카테고리 + 목록 ══ -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingEnd="20dp">
+
+        <!-- 앱 타이틀 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="전자칠판 AI 안내"
+            android:textColor="#E0E0FF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"/>
+
+        <!-- 음성 출력 중 표시 -->
+        <View
+            android:id="@+id/iv_speaking"
+            android:layout_width="60dp"
+            android:layout_height="6dp"
+            android:background="#7F77DD"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- 검색창 -->
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="🔍  검색하세요  (예: 터치 안됨, 와이파이, 저장)"
+            android:textSize="15sp"
+            android:background="#2A2A4A"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#8888AA"
+            android:paddingHorizontal="16dp"
+            android:inputType="text"
+            android:imeOptions="actionSearch"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- 카테고리 버튼들 -->
+        <LinearLayout
+            android:id="@+id/ll_categories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"/>
+
+        <!-- 항목 목록 (카테고리 선택 후) -->
+        <ScrollView
+            android:id="@+id/scroll_items"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone">
+            <LinearLayout
+                android:id="@+id/ll_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+        </ScrollView>
+
+        <!-- 뒤로가기 버튼 -->
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="← 카테고리로 돌아가기"
+            android:visibility="gone"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+    <!-- ══ 오른쪽 패널: 답변 표시 ══ -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.2"
+        android:orientation="vertical"
+        android:background="#12122A"
+        android:padding="24dp">
+
+        <!-- 질문 표시 -->
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="궁금한 기능을 선택하거나 검색해 주세요"
+            android:textColor="#9090CC"
+            android:textSize="16sp"
+            android:paddingBottom="16dp"/>
+
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#2A2A5A"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- 답변 내용 -->
+        <TextView
+            android:id="@+id/tv_answer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text=""
+            android:textColor="#E8E8FF"
+            android:textSize="20sp"
+            android:lineSpacingMultiplier="1.6"
+            android:gravity="top"/>
+
+        <!-- 상태 표시 -->
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="전원이 켜진 상태에서만 작동합니다 | 데이터: 매뉴얼 기반"
+            android:textColor="#555580"
+            android:textSize="12sp"
+            android:paddingTop="12dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
